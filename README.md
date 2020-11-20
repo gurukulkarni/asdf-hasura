@@ -1,6 +1,6 @@
 <div align="center">
 
-# asdf-hasura-cli ![Build](https://github.com/gurukulkarni/asdf-hasura-cli/workflows/Build/badge.svg) ![Lint](https://github.com/gurukulkarni/asdf-hasura-cli/workflows/Lint/badge.svg)
+# hasura-cli ![Build](https://github.com/gurukulkarni/hasura-cli/workflows/Build/badge.svg) ![Lint](https://github.com/gurukulkarni/hasura-cli/workflows/Lint/badge.svg)
 
 [hasura-cli](https://github.com/hasura/graphql-engine/tree/stable/cli) plugin for the [asdf version manager](https://asdf-vm.com).
 
@@ -26,7 +26,7 @@ Plugin:
 ```shell
 asdf plugin add hasura-cli
 # or
-asdf plugin add https://github.com/gurukulkarni/asdf-hasura-cli.git
+asdf plugin add https://github.com/gurukulkarni/hasura-cli.git
 ```
 
 hasura-cli:
@@ -52,7 +52,7 @@ install & manage versions.
 
 Contributions of any kind welcome! See the [contributing guide](contributing.md).
 
-[Thanks goes to these contributors](https://github.com/gurukulkarni/asdf-hasura-cli/graphs/contributors)!
+[Thanks goes to these contributors](https://github.com/gurukulkarni/hasura-cli/graphs/contributors)!
 
 # License
 

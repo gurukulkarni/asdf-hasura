@@ -6,7 +6,7 @@ set -euo pipefail
 GH_REPO="https://github.com/hasura/graphql-engine"
 
 fail() {
-  echo -e "asdf-hasura-cli: $*"
+  echo -e "hasura-cli: $*"
   exit 1
 }
 
@@ -40,7 +40,7 @@ download_release() {
   filename="$2"
 
   # TODO: Adapt the release URL convention for hasura-cli
-  url="$GH_REPO/archive/v${version}.tar.gz"
+  url="$GH_REPO/releases/download/v${version}/${filename}"
 
   echo "* Downloading hasura-cli release $version..."
   curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
@@ -50,23 +50,24 @@ install_version() {
   local install_type="$1"
   local version="$2"
   local install_path="$3"
+  local platform=$(uname | tr '[:upper:]' '[:lower:]')
 
   if [ "$install_type" != "version" ]; then
-    fail "asdf-hasura-cli supports release installs only"
+    fail "hasura-cli supports release installs only"
   fi
 
-  # TODO: Adapt this to proper extension and adapt extracting strategy.
-  local release_file="$install_path/hasura-cli-$version.tar.gz"
+  local release_file="cli-hasura-${platform}-amd64"
   (
     mkdir -p "$install_path"
     download_release "$version" "$release_file"
-    tar -xzf "$release_file" -C "$install_path" --strip-components=1 || fail "Could not extract $release_file"
-    rm "$release_file"
+    mkdir -pv "$install_path/bin"
+    mv -v "$release_file" "$install_path/bin/hasura-cli" || fail "Could not find $release_file"
+    rm -f "$release_file"
 
-    # TODO: Asert hasura-cli executable exists.
+    export HASURA_GRAPHQL_ENABLE_TELEMETRY=false
     local tool_cmd
-    tool_cmd="$(echo "version" | cut -d' ' -f2-)"
-    test -x "$install_path/bin/$tool_cmd" || fail "Expected $install_path/bin/$tool_cmd to be executable."
+    tool_cmd=hasura-cli
+    (chmod u+x "$install_path/bin/$tool_cmd" && test -x "$install_path/bin/$tool_cmd") || fail "Expected $install_path/bin/$tool_cmd to be executable."
 
     echo "hasura-cli $version installation was successful!"
   ) || (
