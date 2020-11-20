@@ -22,5 +22,5 @@ jobs:
         with:
           command: hasura-cli version
         env:
-          - GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          - ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+          GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
