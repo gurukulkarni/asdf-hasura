@@ -25,7 +25,7 @@ Plugin:
 ```shell
 asdf plugin add hasura-cli
 # or
-asdf plugin add https://github.com/gurukulkarni/asdf-hasura.git
+asdf plugin add hasura-cli https://github.com/gurukulkarni/asdf-hasura.git
 ```
 
 hasura-cli:
@@ -41,11 +41,14 @@ asdf install hasura-cli latest
 asdf global hasura-cli latest
 
 # Now hasura-cli commands are available
-version
+hasura version
 ```
 
 Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on how to
 install & manage versions.
+
+# Why
+The hasura Cli installation is just one of the things that we need but is harder to automate. Hence the Plugin!
 
 # Contributing
 
