@@ -61,12 +61,12 @@ install_version() {
     mkdir -p "$install_path"
     download_release "$version" "$release_file"
     mkdir -pv "$install_path/bin"
-    mv -v "$release_file" "$install_path/bin/hasura-cli" || fail "Could not find $release_file"
+    mv -v "$release_file" "$install_path/bin/hasura" || fail "Could not find $release_file"
     rm -f "$release_file"
 
     export HASURA_GRAPHQL_ENABLE_TELEMETRY=false
     local tool_cmd
-    tool_cmd=hasura-cli
+    tool_cmd=hasura
     (chmod u+x "$install_path/bin/$tool_cmd" && test -x "$install_path/bin/$tool_cmd") || fail "Expected $install_path/bin/$tool_cmd to be executable."
 
     echo "hasura-cli $version installation was successful!"

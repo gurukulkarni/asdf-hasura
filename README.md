@@ -1,6 +1,6 @@
 <div align="center">
 
-# hasura-cli ![Build](https://github.com/gurukulkarni/hasura-cli/workflows/Build/badge.svg) ![Lint](https://github.com/gurukulkarni/hasura-cli/workflows/Lint/badge.svg)
+# asdf-hasura-cli ![Build](https://github.com/gurukulkarni/asdf-hasura/workflows/Build/badge.svg) ![Lint](https://github.com/gurukulkarni/asdf-hasura/workflows/Lint/badge.svg)
 
 [hasura-cli](https://github.com/hasura/graphql-engine/tree/stable/cli) plugin for the [asdf version manager](https://asdf-vm.com).
 
@@ -16,8 +16,7 @@
 
 # Dependencies
 
-- `bash`, `curl`, `tar`: generic POSIX utilities.
-- `SOME_ENV_VAR`: set this environment variable in your shell config to load the correct version of tool x.
+- `bash`, `curl`: generic POSIX utilities.
 
 # Install
 
@@ -26,7 +25,7 @@ Plugin:
 ```shell
 asdf plugin add hasura-cli
 # or
-asdf plugin add https://github.com/gurukulkarni/hasura-cli.git
+asdf plugin add https://github.com/gurukulkarni/asdf-hasura.git
 ```
 
 hasura-cli:
