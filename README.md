@@ -22,10 +22,13 @@
 
 Plugin:
 
+```shell 
+asdf plugin add hasura-cli https://github.com/gurukulkarni/asdf-hasura.git
+```
+
+(Only After [PR-325](https://github.com/asdf-vm/asdf-plugins/pull/325) is merged to [asdf-plugins](https://github.com/asdf-vm/asdf-plugins))
 ```shell
 asdf plugin add hasura-cli
-# or
-asdf plugin add hasura-cli https://github.com/gurukulkarni/asdf-hasura.git
 ```
 
 hasura-cli:
