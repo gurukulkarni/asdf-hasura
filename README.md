@@ -8,9 +8,11 @@
 
 # Contents
 
+- [asdf-hasura-cli !Build ![Lint](https://github.com/gurukulkarni/asdf-hasura/workflows/Lint/badge.svg)](#asdf-hasura-cli--)
+- [Contents](#contents)
 - [Dependencies](#dependencies)
 - [Install](#install)
-- [Why?](#why)
+- [Why](#why)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -22,12 +24,9 @@
 
 Plugin:
 
-```shell 
-asdf plugin add hasura-cli https://github.com/gurukulkarni/asdf-hasura.git
-```
-
-(Only After [PR-325](https://github.com/asdf-vm/asdf-plugins/pull/325) is merged to [asdf-plugins](https://github.com/asdf-vm/asdf-plugins))
 ```shell
+asdf plugin add hasura-cli https://github.com/gurukulkarni/asdf-hasura.git
+# OR
 asdf plugin add hasura-cli
 ```
 
